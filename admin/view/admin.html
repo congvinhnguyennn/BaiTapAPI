@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Admin Panel</title>
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://kit.fontawesome.com/577110083f.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- Bootstrap 4 -->
+	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+
+	<!-- JQuery UI -->
+	<link rel="stylesheet" href="/assets/css/jquery-ui.min.css">
+
+	<!-- <link rel="stylesheet" href="css/animate.css"> -->
+
+	<!-- My CSS -->
+	<link rel="stylesheet" href="/assets/css/modal.css">
+    <link rel="stylesheet" href="/admin/view/css/index.css">
+    <link rel="stylesheet" href="/admin/view/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<!-- Sidebar Holder -->
+		<nav id="sidebar">
+			<div class="sidebar-header">
+				<h3>Admin Panel</h3>
+				<strong>Admin</strong>
+				<strong>Panel</strong>
+			</div>
+
+			<ul class="list-unstyled components">
+                <li>
+                    <span class="nav-menu">Navigation</span>
+                </li>
+				<li class="active">
+					<a href="#">
+						<i class="fa-solid fa-gauge-max"></i>
+						Management
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-files-o"></i>
+						Customer Page
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+		<!-- Page Content Holder -->
+		<div id="content">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+
+					<div class="navbar-header">
+						<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+							<i class="glyphicon glyphicon-align-left"></i>
+							<span>Toggle Sidebar</span>
+						</button>
+					</div>
+
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#">Page</a></li>
+							<li><a href="#">Page</a></li>
+							<li><a href="#">Page</a></li>
+							<li><a href="#">Page</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+
+
+			<div class="container">
+				<div class="card text-center">
+					<!-- Header -->
+					<div class="card-header myCardHeader">
+						<div class="row">
+							<div class="col-md-6">
+								<h3 class="text-left text-primary font-weight-bold">Product Management</h3>
+							</div>
+							<div class="col-md-6 text-right">
+								<button class="btn btn-primary" id="btnThem" data-toggle="modal"
+									data-target="#myModal">Thêm sản phẩm</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- Body -->
+					<div class="card-body">
+						<div class="row mb-3">
+							<div class="col">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="Loại sản phẩm" id="searchName">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="btnTimNV" onclick="searchEmployee()"><i class="fa fa-search" onclick="searchEmployee()"></i></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<table class="table table-bordered table-hover myTable">
+							<thead class="text-primary">
+								<tr>
+									<th class="nowrap">
+										<span class="mr-1">#</span>
+										<i class="fa fa-arrow-up" id="SapXepTang"></i>
+										<i class="fa fa-arrow-down" id="SapXepGiam"></i>
+									</th>
+									<th>Name</th>
+									<th>Price</th>
+									<th>Photo</th>
+									<th>Description</th>									
+									<th><em class="fa fa-cog"></em></th>
+								</tr>
+							</thead>
+							<tbody id="tableDanhSach">
+
+							</tbody>
+						</table>
+					</div>
+
+					<!-- Footer -->
+					<div class="card-footer myCardFooter">
+						<nav>
+							<ul class="pagination justify-content-center" id="ulPhanTrang">
+
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<!-- The Modal -->
+	<div class="modal fade" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<header class="head-form mb-0">
+					<h2 id="header-title">Log In</h2>
+				</header>
+
+				<!-- Modal Header -->
+				<!-- 	<div class="modal-header">
+					<h4 class="modal-title" id="modal-title">Modal Heading</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div> -->
+
+				<!-- Modal body -->
+				<div class="modal-body">
+
+					<form role="form">
+
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fa fa-mobile"></i></span>
+								</div>
+								<input type="text" name="tk" id="productName" class="form-control input-sm"
+									placeholder="Product Name">
+									<div class="error"></div>
+							</div>
+
+							<span class="sp-thongbao" id="tbPN"></span>
+						</div>
+
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fa-solid fa-dollar-sign"></i></span>
+								</div>
+								<input type="name" name="name" id="productPrice" class="form-control input-sm"
+									placeholder="Price">
+							</div>
+							<span class="sp-thongbao" id="tbPP"></span>
+						</div>
+
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fa-solid fa-link"></i></span>
+								</div>
+								<input type="text" name="photo" id="productPhoto" class="form-control input-sm"
+									placeholder="Product Photo Link">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fa-solid fa-info"></i></span>
+								</div>
+								<input type="text" name="desc" id="productDesc" class="form-control input-sm"
+									placeholder="Product Info">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fa-solid fa-signature"></i></span>
+								</div>
+								<select class="form-control" id="productType">
+									<option>Select brand</option>
+									<option>iPhone</option>
+									<option>Samsung</option>
+								</select>
+							</div>
+
+							<span class="sp-thongbao" id="tbChucVu"></span>
+						</div>
+
+					</form>
+				</div>
+
+				<!-- Modal footer -->
+				<div class="modal-footer" id="modal-footer">
+					<button id="btnThemNV" type="button" class="btn btn-success" onclick="createEmployee()">Thêm người dùng</button>
+					<button id="btnCapNhat" type="button" class="btn btn-success" onclick="updateEmployee()">Cập nhật</button>
+					<button id="btnDong" type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap -->
+	<script src="/assets/javascript/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/javascript/jquery.easing.min.js"></script>
+	<script type="text/javascript" src="/assets/javascript/popper.min.js"></script>
+	<script type="text/javascript" src="/assets/javascript/bootstrap.min.js"></script>
+
+	<!-- Date Picker -->
+	<!-- <script src="js/jquery-ui.min.js"></script> -->
+	<script src="/assets/javascript/jquery-ui.js"></script>
+	<script src="/assets/javascript/datepicker.js"></script>
+
+	<!-- Wow -->
+	<!-- <script src="js/wow.min.js"></script>	
+	<script>
+		new WOW().init();
+	</script>  -->
+
+	<!-- <script src="js/modal.js"></script> -->
+
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#sidebarCollapse').on('click', function () {
+				$('#sidebar').toggleClass('active');
+			});
+		});
+	</script>
+</body>
+
+</html>
