@@ -58,15 +58,15 @@
 
 		<!-- Page Content Holder -->
 		<div id="content">
-			<nav class="navbar navbar-default">
+			<nav class="navbar-default">
 				<div class="container-fluid">
 
-					<div class="navbar-header">
+					<!-- <div class="navbar-header">
 						<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
 							<i class="glyphicon glyphicon-align-left"></i>
 							<span>Toggle Sidebar</span>
 						</button>
-					</div>
+					</div> -->
 
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
@@ -119,6 +119,7 @@
 									<th>Price</th>
 									<th>Photo</th>
 									<th>Description</th>									
+									<th>Brand</th>									
 									<th><em class="fa fa-cog"></em></th>
 								</tr>
 							</thead>
@@ -149,7 +150,7 @@
 			<div class="modal-content">
 
 				<header class="head-form mb-0">
-					<h2 id="header-title">Log In</h2>
+					<h2 id="header-title">Thêm sản phẩm</h2>
 				</header>
 
 				<!-- Modal Header -->
@@ -168,8 +169,8 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fa fa-mobile"></i></span>
 								</div>
-								<input type="text" name="tk" id="productName" class="form-control input-sm"
-									placeholder="Product Name">
+								<input type="text" name="tk" id="name" class="form-control input-sm"
+									placeholder="Tên sản phẩm">
 									<div class="error"></div>
 							</div>
 
@@ -181,8 +182,8 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fa-solid fa-dollar-sign"></i></span>
 								</div>
-								<input type="name" name="name" id="productPrice" class="form-control input-sm"
-									placeholder="Price">
+								<input type="name" name="name" id="price" class="form-control input-sm"
+									placeholder="Giá tiền">
 							</div>
 							<span class="sp-thongbao" id="tbPP"></span>
 						</div>
@@ -192,8 +193,8 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fa-solid fa-link"></i></span>
 								</div>
-								<input type="text" name="photo" id="productPhoto" class="form-control input-sm"
-									placeholder="Product Photo Link">
+								<input type="text" name="photo" id="photo" class="form-control input-sm"
+									placeholder="Hình ảnh sản phẩm">
 							</div>
 						</div>
 
@@ -202,8 +203,8 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fa-solid fa-info"></i></span>
 								</div>
-								<input type="text" name="desc" id="productDesc" class="form-control input-sm"
-									placeholder="Product Info">
+								<input type="text" name="desc" id="desc" class="form-control input-sm"
+									placeholder="Giới thiệu sản phẩm">
 							</div>
 						</div>
 						<div class="form-group">
@@ -211,13 +212,12 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fa-solid fa-signature"></i></span>
 								</div>
-								<select class="form-control" id="productType">
+								<select class="form-control" id="type">
 									<option>Select brand</option>
 									<option>iPhone</option>
 									<option>Samsung</option>
 								</select>
 							</div>
-
 							<span class="sp-thongbao" id="tbChucVu"></span>
 						</div>
 
@@ -226,8 +226,7 @@
 
 				<!-- Modal footer -->
 				<div class="modal-footer" id="modal-footer">
-					<button id="btnThemNV" type="button" class="btn btn-success" onclick="createEmployee()">Thêm người dùng</button>
-					<button id="btnCapNhat" type="button" class="btn btn-success" onclick="updateEmployee()">Cập nhật</button>
+					<button id="btnThemNV" type="button" class="btn btn-success" onclick="addProduct()">Thêm sản phẩm</button>
 					<button id="btnDong" type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
 				</div>
 
@@ -243,8 +242,12 @@
 
 	<!-- Date Picker -->
 	<!-- <script src="js/jquery-ui.min.js"></script> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="/assets/javascript/jquery-ui.js"></script>
 	<script src="/assets/javascript/datepicker.js"></script>
+    <script src="../model/phone.js"></script>
+    <script src="../services/API.js"></script>
+    <script src="../controller/main.js"></script>
 
 	<!-- Wow -->
 	<!-- <script src="js/wow.min.js"></script>	
@@ -255,13 +258,13 @@
 	<!-- <script src="js/modal.js"></script> -->
 
 
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 		$(document).ready(function () {
 			$('#sidebarCollapse').on('click', function () {
 				$('#sidebar').toggleClass('active');
 			});
 		});
-	</script>
+	</script> -->
 </body>
 
 </html>
