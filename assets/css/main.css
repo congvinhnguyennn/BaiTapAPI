@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 html {
   line-height: 1.15; /* 1 */
@@ -300,6 +301,44 @@ template {
  */
 [hidden] {
   display: none;
+}
+
+.color-blue {
+  color: #2a73dd;
+}
+
+.color-yellow {
+  color: #f9d412;
+}
+
+.color-green {
+  color: #256525;
+}
+
+.color-red {
+  color: #f00;
+}
+
+.color-white {
+  color: #fff;
+}
+
+.color-black {
+  color: #222;
+}
+
+.color-orange {
+  color: #f09d51;
+}
+
+.color-grey {
+  color: #ececec;
+}
+
+body {
+  color: #222;
+  background: #fff;
+  font-family: "Lato", sans-serif;
 }
 
 /*
@@ -626,4 +665,265 @@ a.article, a.article:hover {
 
 .myCardHeader, .myCardFooter {
   background-color: transparent;
+}
+
+#sortValue:hover {
+  cursor: pointer;
+}
+
+#SapXepGiam1 {
+  display: none;
+}
+
+.hero {
+  min-height: calc(100vh - 60px);
+  background: url("/assets/img/banner.webp") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero .banner {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  padding: 2rem;
+}
+.hero .banner .banner-title {
+  font-size: 3.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-bottom: 3rem;
+}
+.hero .banner .banner-btn {
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  background: #f09d51;
+  color: #222;
+  border: 1px solid #f09d51;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.hero .banner .banner-btn:hover {
+  background-color: transparent;
+  color: #f09d51;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #f00;
+  z-index: 1;
+}
+.navbar .navbar-center {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+.navbar .nav-icon {
+  font-size: 1.5rem;
+}
+.navbar .nav-icon a {
+  text-decoration: none;
+}
+.navbar .cart-btn {
+  position: relative;
+  cursor: pointer;
+}
+.navbar .cart-btn .cart-items {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #f09d51;
+  padding: 0 5px;
+  border-radius: 30%;
+  color: #fff;
+}
+
+.products {
+  padding: 4rem 0;
+}
+.products .products-title h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 5rem;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+}
+.products .products-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 2rem;
+}
+.products .product .img-container {
+  position: relative;
+  overflow: hidden;
+}
+.products .product .img-container .bag-btn {
+  position: absolute;
+  top: 70%;
+  right: 0;
+  background: #f09d51;
+  border: none;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  transition: all 0.3s linear;
+  transform: translateX(101%);
+  cursor: pointer;
+}
+.products .product .img-container .bag-btn:hover {
+  color: #fff;
+}
+.products .product .img-container .bag-btn .fa-shopping-cart {
+  margin-right: 0.5rem;
+}
+.products .product .img-container:hover .bag-btn {
+  transform: translateX(0);
+}
+.products .product .img-container .product-img {
+  display: block;
+  width: 100%;
+  height: 50%;
+  min-height: 12rem;
+  transition: all 0.3s linear;
+}
+.products .product .img-container:hover .product-img {
+  opacity: 0.5;
+}
+.products .product h3 {
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+}
+.products .product h4 {
+  margin-top: 0.7rem;
+  letter-spacing: 0.1rem;
+  color: #f09d51;
+  text-align: center;
+}
+.products .cart-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s linear;
+  background: rgba(240, 157, 81, 0.5);
+  z-index: 2;
+  visibility: hidden;
+}
+.products .cart-overlay .cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  z-index: 3;
+  background: rgb(231, 226, 221);
+  padding: 1.5rem;
+  transition: all 0.3s linear;
+  transform: translateX(100%);
+}
+.products .cart-overlay .cart h2 {
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  margin-bottom: 2rem;
+}
+.products .cart-overlay .cart .cart-content .cart-item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  grid-column-gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+.products .cart-overlay .cart .cart-content .cart-item img {
+  width: 75px;
+  height: 75px;
+}
+.products .cart-overlay .cart .cart-content .cart-item h4 {
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+}
+.products .cart-overlay .cart .cart-content .cart-item h5 {
+  margin: 0.5rem 0;
+  letter-spacing: 0.1rem;
+}
+.products .cart-overlay .cart .cart-content .cart-item .item-amount {
+  text-align: center;
+}
+.products .cart-overlay .cart .cart-content .cart-item .remove-item {
+  color: grey;
+  cursor: pointer;
+}
+.products .cart-overlay .cart .cart-content .cart-item .fa-chevron-up, .products .cart-overlay .cart .cart-content .cart-item .fa-chevron-down {
+  color: #f09d51;
+  cursor: pointer;
+}
+.products .cart-overlay .cart .cart-footer {
+  margin-top: 2rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+}
+.products .cart-overlay .cart .cart-footer h3 {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+.products .cart-overlay .cart .cart-footer .banner-btn {
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  background: #f00;
+  color: #222;
+  border: 1px solid #f00;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.products .cart-overlay .cart .cart-footer .check-btn {
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  background: #2a73dd;
+  color: #222;
+  border: 1px solid #2a73dd;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.products .cart-overlay .cart .close-cart {
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.products .cart-overlay .showCart {
+  transform: translateX(0);
+}
+.products .transparentBcg {
+  visibility: visible;
+}
+
+@media screen and (min-width: 768px) {
+  .cart {
+    width: 30vw;
+    min-width: 450px;
+  }
 }/*# sourceMappingURL=main.css.map */

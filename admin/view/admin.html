@@ -48,7 +48,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="/customer/view/index.html">
 						<i class="fa fa-files-o"></i>
 						Customer Page
 					</a>
@@ -102,7 +102,7 @@
 								<div class="input-group">
 									<input type="text" class="form-control" placeholder="Loại sản phẩm" id="searchName">
 									<div class="input-group-prepend">
-										<span class="input-group-text" id="btnTimNV" onclick="searchEmployee()"><i class="fa fa-search" onclick="searchEmployee()"></i></span>
+										<span class="input-group-text" id="btnTimNV"><i class="fa fa-search"></i></span>
 									</div>
 								</div>
 							</div>
@@ -116,7 +116,10 @@
 										<i class="fa fa-arrow-down" id="SapXepGiam"></i>
 									</th>
 									<th>Name</th>
-									<th>Price</th>
+									<th id="sortValue" onclick="sortUp()" ondblclick="sortDown()">Price 
+										<i class="fa fa-arrow-up" id="SapXepTang1"  ></i>
+										<i class="fa fa-arrow-down" id="SapXepGiam1"  ></i>
+									</th>
 									<th>Photo</th>
 									<th>Description</th>									
 									<th>Brand</th>									
@@ -174,7 +177,7 @@
 									<div class="error"></div>
 							</div>
 
-							<span class="sp-thongbao" id="tbPN"></span>
+							<span class="sp-thongbao" id="tbName"></span>
 						</div>
 
 						<div class="form-group">
@@ -185,7 +188,7 @@
 								<input type="name" name="name" id="price" class="form-control input-sm"
 									placeholder="Giá tiền">
 							</div>
-							<span class="sp-thongbao" id="tbPP"></span>
+							<span class="sp-thongbao" id="tbPrice"></span>
 						</div>
 
 						<div class="form-group">
@@ -196,6 +199,7 @@
 								<input type="text" name="photo" id="photo" class="form-control input-sm"
 									placeholder="Hình ảnh sản phẩm">
 							</div>
+							<span class="sp-thongbao" id="tbPhoto"></span>
 						</div>
 
 						<div class="form-group">
@@ -206,6 +210,7 @@
 								<input type="text" name="desc" id="desc" class="form-control input-sm"
 									placeholder="Giới thiệu sản phẩm">
 							</div>
+							<span class="sp-thongbao" id="tbDesc"></span>
 						</div>
 						<div class="form-group">
 							<div class="input-group">
@@ -218,7 +223,7 @@
 									<option>Samsung</option>
 								</select>
 							</div>
-							<span class="sp-thongbao" id="tbChucVu"></span>
+							<span class="sp-thongbao" id="tbType"></span>
 						</div>
 
 					</form>
@@ -226,7 +231,7 @@
 
 				<!-- Modal footer -->
 				<div class="modal-footer" id="modal-footer">
-					<button id="btnThemNV" type="button" class="btn btn-success" onclick="addProduct()">Thêm sản phẩm</button>
+					<button id="btnThemNV" type="button" class="btn btn-success" onclick="addProduct()">Thêm</button>
 					<button id="btnDong" type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
 				</div>
 

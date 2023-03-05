@@ -1,0 +1,28 @@
+
+
+$color-collection: (
+    "blue":$color-blue,
+    "yellow":$color-yellow,
+    "green":$color-green,
+    "red":$color-red,
+    "white":$color-white,
+    "black":$color-black,
+    "orange":$color-orange,
+    "grey":$color-grey
+);
+
+@each $key,
+$value in $color-collection {
+
+    // Ví dụ $key: blue-light => .color-blue-light
+    .color-#{$key} {
+        color: $value;
+    }
+}
+body {
+    color: $color-black;
+    background: $color-white;
+    font-family: "Lato", sans-serif;
+}
+
+

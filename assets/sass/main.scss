@@ -1,3 +1,7 @@
 @import './Helpers/variables';
+@import './Helpers/mixins';
 @import './Base/reset';
-@import './Pages/admin'
+@import './Base/customize';
+@import './Pages/admin';
+@import './Pages/customer';
+
